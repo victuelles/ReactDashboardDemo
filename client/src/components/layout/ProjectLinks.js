@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const ProjectLinks = ({ project }) => {
-  console.log(project);
+  //console.log(project);
   let subLink;
   let subLinks;
   if (project.instance) {
@@ -12,7 +12,7 @@ const ProjectLinks = ({ project }) => {
         key={`${instance._id}`}
         className="collapse-item"
       >
-        {instance.name}
+        {instance.instance_name}
       </Link>
     ));
   }
@@ -23,15 +23,15 @@ const ProjectLinks = ({ project }) => {
         className="nav-link collapsed"
         href="#"
         data-toggle="collapse"
-        data-target={`#${project.name}`}
+        data-target={`#R${project._id}`}
         aria-expanded="true"
-        aria-controls={`${project.name}`}
+        aria-controls={`${project.projectname}`}
       >
         <i className="fas fa-fw fa-cog" />
-        <span>{project.name} </span>
+        <span>{project.projectname} </span>
       </a>
       <div
-        id={`${project.name}`}
+        id={`R${project._id}`}
         className="collapse"
         aria-labelledby="headingTwo"
         data-parent="#accordionSidebar"

@@ -29,7 +29,7 @@ class CreateApplication extends Component {
     const { essential } = this.props;
 
     if (Object.keys(essential).length > 0) {
-      console.log(essential);
+      // console.log(essential);
     }
     const steps = [
       { name: "Essentials", component: <Essentials data={essential} /> },

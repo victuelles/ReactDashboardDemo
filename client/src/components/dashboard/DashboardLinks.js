@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 //import { Link } from "react-router-dom";
 
 const DashboardLinks = ({ project }) => {
-  console.log(project);
+  // console.log(project);
   let subLink;
   let subLinks;
   if (project.instance) {
@@ -15,21 +15,21 @@ const DashboardLinks = ({ project }) => {
               href={instance.url}
               className="replace-micro-link"
             >
-              <h4 className="card-heading">{instance.name}</h4>
+              <h4 className="card-heading">{instance.instance_name}</h4>
             </a>
             <span>{instance.url}</span>
 
             <div className="block">
               <span className="section-title">Uptime</span>
-              <p className="tobeReplacedTime">October 01, 2018 at 04:32 PM</p>
+              <p className="tobeReplacedTime">{instance.date}</p>
             </div>
           </div>
-          <div className="card-footer card-counters row">
-            <div className="col-sm-6 col-xs-6">
+          <div className=" card-counters row">
+            <div className="col   ">
               <span className="section-title">Instance Status: </span>
               <strong className="counts processidreplace">Active</strong>
             </div>
-            <div className="col-sm-6 col-xs-6">
+            <div className="col ">
               <span className="section-title">SSH Port: </span>
               <strong className="counts portreplace">
                 {instance.ssh_port}
@@ -68,7 +68,7 @@ const DashboardLinks = ({ project }) => {
 
   return (
     <Fragment>
-      <h3>{project.name} </h3>
+      <h3>{project.projectname} </h3>
       <div className="row"> {subLink}</div>
     </Fragment>
   );

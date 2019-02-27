@@ -23,7 +23,8 @@ router.get(
   "/",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    Project.find()
+    //
+    Project.find({ user: req.user.id })
       .sort({ order: 1 })
       .then(project => res.json(project))
       .catch(err =>
@@ -122,33 +123,6 @@ router.post(
           ssh_port: req.body.ssh_port
         };
 
-        //add data center array to new Instance
-        //project->instance->data centers
-        /*
-        data_center: [
-        {
-          name: {
-            type: String
-          },
-          size: {
-            type: String
-          },
-          cpu: {
-            type: String
-          },
-          memory: {
-            type: String
-          },
-          storage: {
-            type: String
-          },
-          create_date: {
-            type: Date
-          }
-        }
-      ]
-        */
-
         // Add to instance array
         project.instance.unshift(newInstance);
 
@@ -157,6 +131,37 @@ router.post(
       })
       .catch(err =>
         res.status(404).json({ projectnotfound: "No project found" })
+      );
+  }
+);
+
+// @route   GET api/project/instance/:pid/:iid
+// @desc    Get instance by pid - project id, iid - instance id
+// @access  Public
+router.get(
+  "/instance/:pid/:iid",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Project.findById(req.params.pid)
+      .then(project => {
+        // Check to see if comment exists
+        if (
+          project.instance.filter(
+            instance => instance._id.toString() === req.params.iid
+          ).length === 0
+        ) {
+          return res
+            .status(404)
+            .json({ instancenotexists: "Instance does not exist" });
+        }
+        // Get instance index
+        const instanceIndex = project.instance
+          .map(item => item.id.toString())
+          .indexOf(req.params.iid);
+        res.json(project.instance[instanceIndex]);
+      })
+      .catch(err =>
+        res.status(404).json({ nopostfound: "No project found with that ID" })
       );
   }
 );
