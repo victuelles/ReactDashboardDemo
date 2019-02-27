@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
@@ -28,7 +29,7 @@ class CreateInstance extends Component {
               <img
                 className="card-img-top"
                 src="./img/ip-faq.png"
-                alt="Card image cap"
+                alt="Card   cap"
               />
               <div className="card-body ">
                 <h5 className="card-title">
@@ -37,10 +38,10 @@ class CreateInstance extends Component {
                   </div>
                 </h5>
                 <p className="card-text">FAQ support via NLP </p>
-                <a href="#" className="btn btn-primary">
+                <Link to="" href="#" className="btn btn-primary">
                   {" "}
                   Select
-                </a>{" "}
+                </Link>{" "}
                 <a href="#" className="btn btn-info">
                   {" "}
                   Learn more
@@ -54,7 +55,7 @@ class CreateInstance extends Component {
               <img
                 className="card-img-top"
                 src="./img/ip-support-magic.png"
-                alt="Card image cap"
+                alt="Card   cap"
               />
               <div className="card-body ">
                 <h5 className="card-title">
@@ -80,7 +81,7 @@ class CreateInstance extends Component {
               <img
                 className="card-img-top"
                 src="./img/ip-voice-order.png"
-                alt="Card image cap"
+                alt="Card   cap"
               />
               <div className="card-body ">
                 <h5 className="card-title">
@@ -108,7 +109,7 @@ class CreateInstance extends Component {
               <img
                 className="card-img-top"
                 src="./img/ip-recipe-ai.png"
-                alt="Card image cap"
+                alt="Card   cap"
               />
               <div className="card-body ">
                 <h5 className="card-title">
@@ -136,7 +137,7 @@ class CreateInstance extends Component {
               <img
                 className="card-img-top"
                 src="./img/ip-shipping-order.png"
-                alt="Card image cap"
+                alt="Card  cap"
               />
               <div className="card-body ">
                 <h5 className="card-title">
@@ -162,7 +163,7 @@ class CreateInstance extends Component {
               <img
                 className="card-img-top"
                 src="./img/ip-attribute-magic.png"
-                alt="Card image cap"
+                alt="Card  cap"
               />
               <div className="card-body ">
                 <h5 className="card-title">
@@ -190,7 +191,7 @@ class CreateInstance extends Component {
               <img
                 className="card-img-top"
                 src="./img/ip-blockchain.png"
-                alt="Card image cap"
+                alt="Card   cap"
               />
               <div className="card-body ">
                 <h5 className="card-title">
@@ -224,7 +225,7 @@ class CreateInstance extends Component {
               <img
                 className="card-img-top"
                 src="./img/ip-custom.png"
-                alt="Card image cap"
+                alt="Card   cap"
               />
               <div className="card-body ">
                 <h5 className="card-title">
@@ -622,7 +623,7 @@ class CreateInstance extends Component {
               <img
                 className="card-img-top"
                 src="./img/size_nano.png"
-                alt="Card image cap"
+                alt="Card   cap"
               />
               <div className="card-body ">
                 <h5 className="card-title">
@@ -647,7 +648,7 @@ class CreateInstance extends Component {
               <img
                 className="card-img-top"
                 src="./img/size_micro.png"
-                alt="Card image cap"
+                alt="Card   cap"
               />
               <div className="card-body ">
                 <h5 className="card-title">
@@ -672,7 +673,7 @@ class CreateInstance extends Component {
               <img
                 className="card-img-top"
                 src="./img/size_standard.png"
-                alt="Card image cap"
+                alt="Card   cap"
               />
               <div className="card-body ">
                 <h5 className="card-title">
@@ -697,7 +698,7 @@ class CreateInstance extends Component {
               <img
                 className="card-img-top"
                 src="./img/size_big.png"
-                alt="Card image cap"
+                alt="Card   cap"
               />
               <div className="card-body ">
                 <h5 className="card-title">
@@ -748,7 +749,7 @@ class CreateInstance extends Component {
           <div className="col-sm-3">Project Name</div>
           <div className="col-sm-9">
             <select className="custom-select">
-              <option selected>Select project</option>
+              <option defaultValue>Select project</option>
               <option value="1">Sales</option>
               <option value="2">Marketing</option>
               <option value="3">+ New Project name</option>

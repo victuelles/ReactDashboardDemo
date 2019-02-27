@@ -34,13 +34,21 @@ class Sidebar extends Component {
 
           <hr className="sidebar-divider" />
 
-          <div className="sidebar-heading">Projects</div>
+          <div className="sidebar-heading">Groups (Projects)</div>
 
           {isAuthenticated &&
             profile &&
+            profile.project &&
             profile.project.map(proj => (
               <ProjectLinks key={proj.name} project={proj} />
             ))}
+
+          <li className="nav-item">
+            <a className="nav-link" href="/create-project">
+              <i className="fas fa-plus" />
+              <span className="new-project"> Create New Group</span>
+            </a>
+          </li>
 
           <hr className="sidebar-divider" />
 

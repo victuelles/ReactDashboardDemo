@@ -21,7 +21,11 @@ import Instance from "./components/instance/Instance";
 import Tutorials from "./components/tutorials/Tutorials";
 import CreateProfile from "./components/create-profile/CreateProfile";
 import EditProfile from "./components/edit-profile/EditProfile";
-import CreateInstance from "./components/instance/CreateInstance";
+import CreateProject from "./components/create-project/CreateProject";
+//import CreateInstance from "./components/instance/CreateInstance";
+import CreateApplication from "./components/create-application/CreateApplication";
+
+import NotFound from "./components/not-found/NotFound";
 
 import "@progress/kendo-theme-default/dist/all.css";
 import "./iterate.css";
@@ -59,7 +63,7 @@ class App extends Component {
               <div className="content-wrapper d-flex flex-column">
                 <div className="content">
                   <Navbar />
-
+                  <Route exact path="/not-found" component={NotFound} />
                   <Route exact path="/" component={Landing} />
                   <div className="container-fluid">
                     <Route exact path="/register" component={Register} />
@@ -74,8 +78,15 @@ class App extends Component {
                     <Switch>
                       <PrivateRoute
                         exact
-                        path="/create"
-                        component={CreateInstance}
+                        path="/create-application"
+                        component={CreateApplication}
+                      />
+                    </Switch>
+                    <Switch>
+                      <PrivateRoute
+                        exact
+                        path="/create-project"
+                        component={CreateProject}
                       />
                     </Switch>
                     <Switch>

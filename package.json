@@ -13,12 +13,6 @@
   "author": "Rom Victuelles",
   "license": "MIT",
   "dependencies": {
-    "@progress/kendo-data-query": "^1.5.0",
-    "@progress/kendo-react-dateinputs": "^2.6.1",
-    "@progress/kendo-react-dropdowns": "^2.6.1",
-    "@progress/kendo-react-grid": "^2.6.1",
-    "@progress/kendo-react-inputs": "^2.6.1",
-    "@progress/kendo-react-intl": "^2.6.1",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.2",
     "concurrently": "^4.1.0",

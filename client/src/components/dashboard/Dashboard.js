@@ -43,6 +43,7 @@ class Dashboard extends Component {
         */}
         {isAuthenticated &&
           profile &&
+          profile.project &&
           profile.project.map(proj => (
             <DashboardLinks key={proj.name} project={proj} />
           ))}

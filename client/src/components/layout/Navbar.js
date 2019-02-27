@@ -89,7 +89,10 @@ class Navbar extends Component {
           </li>
 
           <li className="nav-item  no-arrow mx-1 ">
-            <Link to="/create" className="btn btn-primary btn-md create-btn">
+            <Link
+              to="/create-application"
+              className="btn btn-primary btn-md create-btn"
+            >
               <i className="fas fa-plus" />{" "}
             </Link>
           </li>
@@ -276,7 +279,7 @@ class Navbar extends Component {
               className="dropdown-menu dropdown-menu-right shadow animated--grow-in"
               aria-labelledby="userDropdown"
             >
-              <Link to="/create-profile" className="dropdown-item" href="#">
+              <Link to="/edit-profile" className="dropdown-item" href="#">
                 <i className="fas fa-user fa-sm fa-fw mr-2 text-gray-400" />{" "}
                 Profile
               </Link>
