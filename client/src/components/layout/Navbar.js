@@ -19,7 +19,7 @@ class Navbar extends Component {
         <a className="" href="index.html">
           <div className="sidebar-brand-icon ">
             <img
-              src="./img/logo_dashboard.png"
+              src="/img/logo_dashboard.png"
               height="51"
               width="33"
               alt="dashboard placeholder"
@@ -90,7 +90,7 @@ class Navbar extends Component {
 
           <li className="nav-item  no-arrow mx-1 ">
             <Link
-              to="/create-application"
+              to="/create-application/new"
               className="btn btn-primary btn-md create-btn"
             >
               <i className="fas fa-plus" />{" "}
@@ -235,7 +235,7 @@ class Navbar extends Component {
                 <div className="dropdown-list-image mr-3">
                   <img
                     className="rounded-circle"
-                    src="./img/romina_pic.jpg"
+                    src="/img/romina_pic.jpg"
                     alt=""
                   />
                   <div className="status-indicator bg-success" />
@@ -271,7 +271,7 @@ class Navbar extends Component {
               </span>
               <img
                 className="img-profile rounded-circle"
-                src="./img/romina_pic2.jpg"
+                src="/img/romina_pic2.jpg"
               />
             </a>
 
@@ -314,7 +314,7 @@ class Navbar extends Component {
           <a className="navbar-brand brand">
             {" "}
             <img
-              src="./img/_logo.png"
+              src="/img/_logo.png"
               alt=""
               className="image-8"
               height="41"

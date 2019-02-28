@@ -77,8 +77,8 @@ class App extends Component {
                     </Switch>
                     <Switch>
                       <PrivateRoute
-                        exact
-                        path="/create-application"
+                       
+                        path="/create-application/:id"
                         component={CreateApplication}
                       />
                     </Switch>

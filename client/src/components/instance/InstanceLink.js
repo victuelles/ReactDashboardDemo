@@ -45,7 +45,7 @@ const InstanceLink = ({ instance }) => {
             type="button"
             className="btn btn-border btn-sm btn-link btn-circle ripple-effect"
           >
-            <i className="fas fa-delete" />
+            <i className="fas fa-trash" />
           </button>
         </div>
       </div>

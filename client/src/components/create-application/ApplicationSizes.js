@@ -10,7 +10,7 @@ const ApplicationSizes = props => (
         <div className="card border-left-warning shadow h-100  ">
           <img
             className="card-img-top"
-            src="./img/size_nano.png"
+            src="/img/size_nano.png"
             alt="Card  cap"
           />
           <div className="card-body ">
@@ -35,7 +35,7 @@ const ApplicationSizes = props => (
         <div className="card border-left-warning shadow h-100  ">
           <img
             className="card-img-top"
-            src="./img/size_micro.png"
+            src="/img/size_micro.png"
             alt="Card image cap"
           />
           <div className="card-body ">
@@ -60,7 +60,7 @@ const ApplicationSizes = props => (
         <div className="card border-left-warning shadow h-100  ">
           <img
             className="card-img-top"
-            src="./img/size_standard.png"
+            src="/img/size_standard.png"
             alt="Card image cap"
           />
           <div className="card-body ">
@@ -85,7 +85,7 @@ const ApplicationSizes = props => (
         <div className="card border-left-warning shadow h-100  ">
           <img
             className="card-img-top"
-            src="./img/size_big.png"
+            src="/img/size_big.png"
             alt="Card image cap"
           />
           <div className="card-body ">

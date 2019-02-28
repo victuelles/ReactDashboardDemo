@@ -33,7 +33,7 @@ const DataCenters = props => (
               <div className="card align-items-center data-center">
                 <div className="card-body ">
                   <img
-                    src="./img/blank.gif"
+                    src="/img/blank.gif"
                     className="flag flag-kr "
                     alt="South Korean"
                   />
@@ -44,7 +44,7 @@ const DataCenters = props => (
               <div className="card align-items-center data-center">
                 <div className="card-body ">
                   <img
-                    src="./img/blank.gif"
+                    src="/img/blank.gif"
                     className="flag flag-sg "
                     alt="Singapore"
                   />
@@ -55,7 +55,7 @@ const DataCenters = props => (
               <div className="card align-items-center data-center">
                 <div className="card-body ">
                   <img
-                    src="./img/blank.gif"
+                    src="/img/blank.gif"
                     className="flag flag-au "
                     alt="Australia"
                   />
@@ -66,7 +66,7 @@ const DataCenters = props => (
               <div className="card align-items-center data-center">
                 <div className="card-body ">
                   <img
-                    src="./img/blank.gif"
+                    src="/img/blank.gif"
                     className="flag flag-jp "
                     alt="Japan"
                   />
@@ -82,7 +82,7 @@ const DataCenters = props => (
               <div className="card align-items-center data-center">
                 <div className="card-body    text-center ">
                   <img
-                    src="./img/blank.gif"
+                    src="/img/blank.gif"
                     className="flag flag-de "
                     alt="South Korean"
                   />
@@ -93,7 +93,7 @@ const DataCenters = props => (
               <div className="card align-items-center data-center">
                 <div className="card-body ">
                   <img
-                    src="./img/blank.gif"
+                    src="/img/blank.gif"
                     className="flag flag-ie "
                     alt="Singapore"
                   />
@@ -104,7 +104,7 @@ const DataCenters = props => (
               <div className="card align-items-center data-center">
                 <div className="card-body ">
                   <img
-                    src="./img/blank.gif"
+                    src="/img/blank.gif"
                     className="flag flag-gb "
                     alt="Australia"
                   />
@@ -115,7 +115,7 @@ const DataCenters = props => (
               <div className="card align-items-center data-center">
                 <div className="card-body ">
                   <img
-                    src="./img/blank.gif"
+                    src="/img/blank.gif"
                     className="flag flag-fr "
                     alt="Japan"
                   />
@@ -132,7 +132,7 @@ const DataCenters = props => (
               <div className="card align-items-center data-center">
                 <div className="card-body text-center ">
                   <img
-                    src="./img/blank.gif"
+                    src="/img/blank.gif"
                     className="flag flag-us "
                     alt="South Korean"
                   />
@@ -143,7 +143,7 @@ const DataCenters = props => (
               <div className="card align-items-center data-center">
                 <div className="card-body text-center  ">
                   <img
-                    src="./img/blank.gif"
+                    src="/img/blank.gif"
                     className="flag flag-us "
                     alt="Singapore"
                   />
@@ -154,7 +154,7 @@ const DataCenters = props => (
               <div className="card align-items-center data-center">
                 <div className="card-body text-center ">
                   <img
-                    src="./img/blank.gif"
+                    src="/img/blank.gif"
                     className="flag flag-us "
                     alt="Australia"
                   />
@@ -165,7 +165,7 @@ const DataCenters = props => (
               <div className="card align-items-center data-center">
                 <div className="card-body  text-center">
                   <img
-                    src="./img/blank.gif"
+                    src="/img/blank.gif"
                     className="flag flag-us "
                     alt="Japan"
                   />
@@ -175,7 +175,7 @@ const DataCenters = props => (
               <div className="card align-items-center data-center">
                 <div className="card-body ">
                   <img
-                    src="./img/blank.gif"
+                    src="/img/blank.gif"
                     className="flag flag-ca "
                     alt="Japan"
                   />
@@ -185,7 +185,7 @@ const DataCenters = props => (
               <div className="card align-items-center data-center">
                 <div className="card-body text-center ">
                   <img
-                    src="./img/blank.gif"
+                    src="/img/blank.gif"
                     className="flag flag-br "
                     alt="Japan"
                   />
@@ -205,7 +205,7 @@ const DataCenters = props => (
               <div className="card align-items-center data-center">
                 <div className="card-body text-center ">
                   <img
-                    src="./img/blank.gif"
+                    src="/img/blank.gif"
                     className="flag flag-fi "
                     alt="South Korean"
                   />
@@ -219,7 +219,7 @@ const DataCenters = props => (
               <div className="card align-items-center data-center">
                 <div className="card-body  text-center">
                   <img
-                    src="./img/blank.gif"
+                    src="/img/blank.gif"
                     className="flag flag-gb "
                     alt="Singapore"
                   />
@@ -234,7 +234,7 @@ const DataCenters = props => (
               <div className="card align-items-center data-center">
                 <div className="card-body text-center ">
                   <img
-                    src="./img/blank.gif"
+                    src="/img/blank.gif"
                     className="flag flag-us "
                     alt="Australia"
                   />
@@ -248,7 +248,7 @@ const DataCenters = props => (
               <div className="card align-items-center data-center">
                 <div className="card-body text-center  ">
                   <img
-                    src="./img/blank.gif"
+                    src="/img/blank.gif"
                     className="flag flag-sg "
                     alt="Japan"
                   />
@@ -262,7 +262,7 @@ const DataCenters = props => (
               <div className="card align-items-center data-center">
                 <div className="card-body  text-center">
                   <img
-                    src="./img/blank.gif"
+                    src="/img/blank.gif"
                     className="flag flag-au "
                     alt="Singapore"
                   />
@@ -276,7 +276,7 @@ const DataCenters = props => (
               <div className="card align-items-center data-center">
                 <div className="card-body text-center ">
                   <img
-                    src="./img/blank.gif"
+                    src="/img/blank.gif"
                     className="flag flag-us "
                     alt="Australia"
                   />
@@ -290,7 +290,7 @@ const DataCenters = props => (
               <div className="card align-items-center data-center">
                 <div className="card-body text-center  ">
                   <img
-                    src="./img/blank.gif"
+                    src="/img/blank.gif"
                     className="flag flag-sg "
                     alt="Japan"
                   />
@@ -311,7 +311,7 @@ const DataCenters = props => (
               <div className="card align-items-center data-center">
                 <div className="card-body text-center">
                   <img
-                    src="./img/blank.gif"
+                    src="/img/blank.gif"
                     className="flag flag-de "
                     alt="South Korean"
                   />
@@ -324,7 +324,7 @@ const DataCenters = props => (
               <div className="card align-items-center data-center">
                 <div className="card-body text-center">
                   <img
-                    src="./img/blank.gif"
+                    src="/img/blank.gif"
                     className="flag flag-us "
                     alt="Singapore"
                   />
@@ -337,7 +337,7 @@ const DataCenters = props => (
               <div className="card align-items-center data-center">
                 <div className="card-body text-center ">
                   <img
-                    src="./img/blank.gif"
+                    src="/img/blank.gif"
                     className="flag flag-us "
                     alt="Australia"
                   />
@@ -350,7 +350,7 @@ const DataCenters = props => (
               <div className="card align-items-center data-center">
                 <div className="card-body text-center">
                   <img
-                    src="./img/blank.gif"
+                    src="/img/blank.gif"
                     className="flag flag-ca "
                     alt="Japan"
                   />
