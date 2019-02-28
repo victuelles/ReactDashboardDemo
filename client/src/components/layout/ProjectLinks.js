@@ -16,28 +16,30 @@ const ProjectLinks = ({ project }) => {
       </Link>
     ));
   }
-
+  console.log(subLink);
   return (
     <li className="nav-item">
       <a
         className="nav-link collapsed"
         href="#"
-        data-toggle="collapse"
+        data-toggle={subLink.length > 0 ? "collapse" : ""}
         data-target={`#R${project._id}`}
-        aria-expanded="true"
+        aria-expanded={subLink.length > 0 ? "true" : ""}
         aria-controls={`${project.projectname}`}
       >
         <i className="fas fa-fw fa-cog" />
-        <span>{project.projectname} </span>
+        <span> {project.projectname} </span>
       </a>
-      <div
-        id={`R${project._id}`}
-        className="collapse"
-        aria-labelledby="headingTwo"
-        data-parent="#accordionSidebar"
-      >
-        <div className="bg-white py-2 collapse-inner rounded">{subLink}</div>
-      </div>
+      {subLink.length > 0 && (
+        <div
+          id={`R${project._id}`}
+          className="collapse"
+          aria-labelledby="headingTwo"
+          data-parent="#accordionSidebar"
+        >
+          <div className="bg-white py-2 collapse-inner rounded">{subLink}</div>
+        </div>
+      )}
     </li>
   );
 };

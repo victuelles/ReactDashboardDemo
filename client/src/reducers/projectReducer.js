@@ -3,7 +3,9 @@ import {
   GET_PROJECTS,
   GET_PROJECT,
   DELETE_PROJECT,
-  PROJECTS_LOADING
+  PROJECTS_LOADING,
+  GET_PROJECT_INSTANCE,
+  CLEAR_PROJECT_INSTANCE
 } from "../actions/types";
 
 const initialState = {
@@ -24,6 +26,17 @@ export default function(state = initialState, action) {
         ...state,
         projects: action.payload,
         loading: false
+      };
+    case GET_PROJECT_INSTANCE:
+      return {
+        ...state,
+        instance: action.payload,
+        loading: false
+      };
+    case CLEAR_PROJECT_INSTANCE:
+      return {
+        ...state,
+        instance: null
       };
     case GET_PROJECT:
       return {

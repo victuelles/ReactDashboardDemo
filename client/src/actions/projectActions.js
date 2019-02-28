@@ -7,7 +7,9 @@ import {
   GET_PROJECTS,
   GET_PROJECT,
   PROJECTS_LOADING,
-  DELETE_PROJECT
+  DELETE_PROJECT,
+  GET_PROJECT_INSTANCE,
+  CLEAR_PROJECT_INSTANCE
 } from "./types";
 
 // Add Project or a Group
@@ -83,6 +85,35 @@ export const deleteProject = id => dispatch => {
         payload: err.response.data
       })
     );
+};
+
+// Get a Project by id
+// pid - project id
+// iid - instance id
+export const getProjectInstance = (pid, iid) => dispatch => {
+  dispatch(setProjectsLoading());
+  dispatch(clearProjectInstance());
+  axios
+    .get(`/api/project/instance/${pid}/${iid}`)
+    .then(res =>
+      dispatch({
+        type: GET_PROJECT_INSTANCE,
+        payload: res.data
+      })
+    )
+    .catch(err =>
+      dispatch({
+        type: GET_PROJECT_INSTANCE,
+        payload: null
+      })
+    );
+};
+
+// Clear profile
+export const clearProjectInstance = () => {
+  return {
+    type: CLEAR_PROJECT_INSTANCE
+  };
 };
 
 // Set loading state
