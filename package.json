@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "demo dashboard",
   "main": "server.js",
+  "engines": {
+    "node": "10.15.2",
+    "npm": "6.4.1"
+  },
   "scripts": {
     "client-install": "npm install --prefix client",
     "start": "node server.js",
