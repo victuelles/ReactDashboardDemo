@@ -3239,6 +3239,6 @@ ol.progtrckr li.progtrckr-done:hover:before {
 }
 
 .new-project {
-  color: rgba(255, 255, 255, 0.9.85);
+  /* color: rgba(255, 255, 255, 0.9.85); */
   font-weight: bold;
 }
