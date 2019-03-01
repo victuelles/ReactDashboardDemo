@@ -15,7 +15,7 @@ class Navbar extends Component {
     const { isAuthenticated, user } = this.props.auth;
 
     const authLinks = (
-      <nav className="navbar navbar-expand navbar-light bg-white topbar  static-top shadow mb-4">
+      <nav className="navbar navbar-expand navbar-light  topbar  static-top shadow mb-4">
         <a className="" href="index.html">
           <div className="sidebar-brand-icon ">
             <img

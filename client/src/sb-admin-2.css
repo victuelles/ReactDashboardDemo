@@ -10938,7 +10938,7 @@ a:focus {
 }
 
 .topbar .navbar-search input {
-  font-size: 0.85rem;
+  font-size: 0.95rem;
 }
 
 .topbar .topbar-divider {
@@ -12033,6 +12033,7 @@ margin: 5px;
   font-weight: bold;
 }
 
-.btn-info, .btn-primary{
+/* .btn-info, .btn-primary{
   margin:2px;
-}
+} */
+
