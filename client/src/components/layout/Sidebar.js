@@ -30,7 +30,14 @@ class Sidebar extends Component {
           <a
             className="sidebar-brand d-flex align-items-center justify-content-center"
             href="/dashboard"
-          />
+          >
+            <img
+              src="/img/logo_interplay.png"
+              height="51"
+              width="150"
+              alt="dashboard placeholder"
+            />
+          </a>
           <hr className="sidebar-divider my-0" />
 
           <li className="nav-item active">

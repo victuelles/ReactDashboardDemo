@@ -17,14 +17,7 @@ class Navbar extends Component {
     const authLinks = (
       <nav className="navbar navbar-expand navbar-light  topbar  static-top shadow mb-4">
         <a className="" href="index.html">
-          <div className="sidebar-brand-icon ">
-            <img
-              src="/img/logo_dashboard.png"
-              height="51"
-              width="33"
-              alt="dashboard placeholder"
-            />
-          </div>
+          <div className="sidebar-brand-icon " />
         </a>
 
         <button

@@ -1,9 +1,7 @@
-import React, { Fragment } from "react";
+import React, { Component, Fragment } from "react";
 //import { Link } from "react-router-dom";
 
 const EssentialCard = ({ item }) => {
-  console.log(item);
-
   return (
     <Fragment>
       <div className="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-xs-4 mb-4 no-gutters">
@@ -30,4 +28,5 @@ const EssentialCard = ({ item }) => {
     </Fragment>
   );
 };
+
 export default EssentialCard;
