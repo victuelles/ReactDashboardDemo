@@ -50,7 +50,7 @@ class CreateProject extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-8 m-auto">
-              <h1 className="display-4 text-center">Create New Group </h1>
+              <h3 className="  text-center">Create New Group </h3>
               <p className="lead text-center">
                 Let's get some information to make your Group stand out
               </p>

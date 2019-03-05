@@ -89,3 +89,7 @@ a.create-btn {
 button {
   outline: none !important;
 }
+.row > div > img {
+  width: 100%;
+  display: block;
+}

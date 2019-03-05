@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-//import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const InstanceLink = ({ instance }) => {
   // console.log(instance.instance_name);
@@ -7,9 +7,13 @@ const InstanceLink = ({ instance }) => {
     <div className="  col-sm-4  no-gutters" key={`${instance._id}`}>
       <div className="item card z-depth application-card">
         <div className="card-body">
-          <a target="_blank" href={instance.url} className="replace-micro-link">
+          <Link
+            target="_blank"
+            to={instance.url}
+            className="replace-micro-link"
+          >
             <h4 className="card-heading">{instance.instance_name}</h4>
-          </a>
+          </Link>
           <span>{instance.url}</span>
 
           <div className="block">

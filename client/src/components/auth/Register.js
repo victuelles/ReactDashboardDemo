@@ -4,6 +4,7 @@ import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { registerUser } from "../../actions/authActions";
 import TextFieldGroup from "../common/TextFieldGroup";
+import SelectListGroup from "../common/SelectListGroup";
 
 class Register extends Component {
   constructor() {
@@ -13,6 +14,7 @@ class Register extends Component {
       email: "",
       password: "",
       password2: "",
+      package: "",
       errors: {}
     };
     this.onChange = this.onChange.bind(this);
@@ -41,7 +43,8 @@ class Register extends Component {
       name: this.state.name,
       email: this.state.email,
       password: this.state.password,
-      password2: this.state.password2
+      password2: this.state.password2,
+      package: this.state.package
     };
     //console.log(newUser)
     this.props.registerUser(newUser, this.props.history);
@@ -51,7 +54,14 @@ class Register extends Component {
   render() {
     //get errors from state
     const { errors } = this.state;
-
+    // Select options for status
+    const options = [
+      { label: "* Select Interplay Package", value: null },
+      { label: "Starter", value: 1 },
+      { label: "Professional", value: 2 },
+      { label: "Enterprise", value: 3 },
+      { label: "Custom", value: 4 }
+    ];
     return (
       <div className="register">
         <div className="container">
@@ -60,6 +70,14 @@ class Register extends Component {
               <h1 className="display-4 text-center">Sign Up</h1>
               <p className="lead text-center">Create your Interplay account</p>
               <form className="text-center" onSubmit={this.onSubmit}>
+                <SelectListGroup
+                  placeholder="Package type"
+                  name="package"
+                  value={this.state.package}
+                  onChange={this.onChange}
+                  options={options}
+                  error={errors.package}
+                />
                 <TextFieldGroup
                   placeholder="Name"
                   name="name"

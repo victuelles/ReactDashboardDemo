@@ -2,12 +2,13 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
-const path=require('path')
+const path = require("path");
 
 const users = require("./routes/api/users");
 const profile = require("./routes/api/profile");
 const posts = require("./routes/api/posts");
 const essentials = require("./routes/api/essentials");
+const packages = require("./routes/api/packages");
 const project = require("./routes/api/projects");
 const app = express();
 
@@ -35,15 +36,16 @@ app.use("/api/users", users);
 app.use("/api/profile", profile);
 app.use("/api/posts", posts);
 app.use("/api/essentials", essentials);
+app.use("/api/packages", packages);
 app.use("/api/project", project);
 
 //serve static assets if in production
-if(process.env.NODE_ENV==='production'){
+if (process.env.NODE_ENV === "production") {
   //set static folder
-  app.use(express.static('client/build'))
-  app.get('*',(req,res)=>{
-    res.sendFile(path.resolve(__dirname,'client','build','index.html'))
-  })
+  app.use(express.static("client/build"));
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  });
 }
 const port = process.env.PORT || 5000;
 

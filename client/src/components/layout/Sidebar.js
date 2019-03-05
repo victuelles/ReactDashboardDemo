@@ -58,18 +58,18 @@ class Sidebar extends Component {
             ))}
 
           <li className="nav-item">
-            <a className="nav-link" href="/create-project">
+            <Link className="nav-link" to="/create-project">
               <i className="fas fa-plus" />
               <span className="new-project"> Create New Group</span>
-            </a>
+            </Link>
           </li>
 
           <hr className="sidebar-divider" />
           <li className="nav-item">
-            <a className="nav-link " href="/create-application/new">
+            <Link className="nav-link " to="/create-application/new">
               <i className="fas fa-rocket" />
               <span className="new-project"> Create Application</span>
-            </a>
+            </Link>
           </li>
           <hr className="sidebar-divider" />
 

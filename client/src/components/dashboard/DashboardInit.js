@@ -5,26 +5,27 @@ class DashboardInit extends Component {
     return (
       <Fragment>
         <div className="row">
-          <div className="media">
+          <div className="col-sm-4">
             <img
-              className="mr-5 align-self-center"
+              className=" align-self-center"
               src="/img/size_standard.png"
               alt="Generic placeholder image"
             />
-            <div className="media-body">
-              <h5 className="mt-0">
-                <b>Starter Package</b>
-              </h5>
-              <ul>
-                <li> $30K/year license</li>
-                <li> Interplay Essentials with 5 hrs customizations </li>
-                <li> Micro servers computing power (dev/test/prod) </li>
-                <li> No GPU</li>
-              </ul>
-            </div>
+          </div>
+
+          <div className="col-sm-8">
+            <h5 className="mt-0">
+              <b>Starter Package</b>
+            </h5>
+            <ul>
+              <li> $30K/year license</li>
+              <li> Interplay Essentials with 5 hrs customizations </li>
+              <li> Micro servers computing power (dev/test/prod) </li>
+              <li> No GPU</li>
+            </ul>
           </div>
         </div>
-
+        <hr />
         <div className="row">
           <div className="col-sm-4">
             <div className="card">

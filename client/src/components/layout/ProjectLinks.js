@@ -26,7 +26,7 @@ const ProjectLinks = ({ project }) => {
         aria-expanded="true"
         aria-controls={`${project.projectname}`}
       >
-        <i className="fas fa-fw fa-cog" />
+        <i className="far fa-object-group" />
         <span> {project.projectname} </span>
       </a>
 

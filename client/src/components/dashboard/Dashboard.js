@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import DashboardLinks from "./DashboardLinks";
 import DashboardInit from "./DashboardInit";
+import Spinner from "../common/Spinner";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
@@ -21,26 +22,26 @@ class Dashboard extends Component {
     const { user, isAuthenticated } = this.props.auth;
     const { profile, loading } = this.props.profile;
     const { projects } = this.props.project;
+    let hasInstance = false;
 
-    let dashboardContent;
-    if (profile) {
-      //  console.log(user.name, profile.handle);
+    if (isAuthenticated && projects && projects.length > 0) {
+      projects.map(
+        proj => (hasInstance = proj.instance.length > 0 ? true : false)
+      );
     }
-
+    //console.log("hasInstance", hasInstance);
     return (
       <div className="dashboard ">
-        <h3 className="d-sm-flex align-items-center justify-content-between mb-4 page-heading">
+        <h4 className="d-sm-flex align-items-center justify-content-between mb-4 page-heading">
           Dashboard
-        </h3>
-        {isAuthenticated &&
-          projects &&
-          (projects.length > 0 ? (
-            projects.map(proj => (
-              <DashboardLinks key={proj._id} project={proj} />
-            ))
-          ) : (
-            <DashboardInit />
-          ))}
+        </h4>
+        {hasInstance ? (
+          projects.map(proj => <DashboardLinks key={proj._id} project={proj} />)
+        ) : profile === null || loading ? (
+          <Spinner />
+        ) : (
+          <DashboardInit />
+        )}
       </div>
     );
   }
