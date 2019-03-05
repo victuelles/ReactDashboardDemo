@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import DashboardLinks from "./DashboardLinks";
+import DashboardInit from "./DashboardInit";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
@@ -31,25 +32,14 @@ class Dashboard extends Component {
         <h3 className="d-sm-flex align-items-center justify-content-between mb-4 page-heading">
           Dashboard
         </h3>
-        {/*
-        {profile &&
-          profile.project.map(proj => {
-            //   console.log(proj.name);
-            proj.instance.map(instance => {
-              //  console.log(instance.name);
-              // console.log(instance.data_center);
-              instance.data_center.map(data_center => {
-                //   console.log(data_center.name);
-                //   console.log(data_center.size);
-              });
-            });
-          })}
-        */}
-
         {isAuthenticated &&
           projects &&
-          projects.map(proj => (
-            <DashboardLinks key={proj._id} project={proj} />
+          (projects.length > 0 ? (
+            projects.map(proj => (
+              <DashboardLinks key={proj._id} project={proj} />
+            ))
+          ) : (
+            <DashboardInit />
           ))}
       </div>
     );

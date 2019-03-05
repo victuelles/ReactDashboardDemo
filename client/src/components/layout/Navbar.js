@@ -5,12 +5,25 @@ import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import { clearCurrentProfile } from "../../actions/profileActions";
 class Navbar extends Component {
+  state = { toggle: false };
   onLogoutClick(e) {
     e.preventDefault();
     this.props.clearCurrentProfile();
     this.props.logoutUser();
   }
-
+  toggleSideBar(e) {
+    e.preventDefault();
+    console.log("toggleSideBar clicked");
+  }
+  /* TODO
+  $("#sidebarToggle, #sidebarToggleTop").on('click', function(e) {
+    $("body").toggleClass("sidebar-toggled");
+    $(".sidebar").toggleClass("toggled");
+    if ($(".sidebar").hasClass("toggled")) {
+      $('.sidebar .collapse').collapse('hide');
+    };
+  });
+*/
   render() {
     const { isAuthenticated, user } = this.props.auth;
 
@@ -21,6 +34,7 @@ class Navbar extends Component {
         </a>
 
         <button
+          onClick={this.toggleSideBar.bind(this)}
           id="sidebarToggleTop"
           className="btn btn-link d-md-none rounded-circle mr-3"
         >
