@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const ProjectLinks = ({ project }) => {
   let subLink;
-  let subLinks;
+
   if (project.instance) {
     subLink = project.instance.map(instance => (
       <Link
@@ -18,9 +18,9 @@ const ProjectLinks = ({ project }) => {
 
   return (
     <li className="nav-item">
-      <a
+      <Link
         className="nav-link collapsed"
-        href="#"
+        to="/"
         data-toggle="collapse"
         data-target={`#R${project._id}`}
         aria-expanded="true"
@@ -28,7 +28,7 @@ const ProjectLinks = ({ project }) => {
       >
         <i className="far fa-object-group" />
         <span> {project.projectname} </span>
-      </a>
+      </Link>
 
       <div
         id={`R${project._id}`}
@@ -39,13 +39,13 @@ const ProjectLinks = ({ project }) => {
         <div className="bg-white py-2 collapse-inner rounded">
           {subLink}
 
-          <a
+          <Link
             className="collapse-item"
-            href={`/create-application/${project._id}`}
+            to={`/create-application/${project._id}`}
           >
             <i className="fas fa-plus" />
             <span className="new-project"> New Application</span>
-          </a>
+          </Link>
         </div>
       </div>
     </li>

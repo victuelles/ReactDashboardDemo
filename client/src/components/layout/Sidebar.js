@@ -13,8 +13,8 @@ class Sidebar extends Component {
     this.props.getProjects();
   }
   render() {
-    const { isAuthenticated, user } = this.props.auth;
-    // console.log(user.name);
+    const { isAuthenticated } = this.props.auth;
+    //console.log(user.package);
     const { profile } = this.props.profile;
     const { projects } = this.props.project;
 

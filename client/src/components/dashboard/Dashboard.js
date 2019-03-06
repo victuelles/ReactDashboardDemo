@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import DashboardLinks from "./DashboardLinks";
 import DashboardInit from "./DashboardInit";
 import Spinner from "../common/Spinner";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getCurrentProfile } from "../../actions/profileActions";
@@ -23,12 +23,16 @@ class Dashboard extends Component {
     const { profile, loading } = this.props.profile;
     const { projects } = this.props.project;
     let hasInstance = false;
+    const packages = ["Starter ", "Professional", "Enterprise"];
 
+    //let package="";
     if (isAuthenticated && projects && projects.length > 0) {
       projects.map(
         proj => (hasInstance = proj.instance.length > 0 ? true : false)
       );
     }
+    let packageSelected = packages[user.package - 1];
+    console.log(packageSelected);
     //console.log("hasInstance", hasInstance);
     return (
       <div className="dashboard ">
@@ -40,7 +44,10 @@ class Dashboard extends Component {
         ) : profile === null || loading ? (
           <Spinner />
         ) : (
-          <DashboardInit />
+          <DashboardInit
+            packageSelected={packageSelected}
+            packageValue={user.package}
+          />
         )}
       </div>
     );

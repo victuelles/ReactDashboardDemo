@@ -1,5 +1,5 @@
-import React, { Component, Fragment } from "react";
-//import { Link } from "react-router-dom";
+import React, { Fragment } from "react";
+import { Link } from "react-router-dom";
 
 const EssentialCard = ({ item }) => {
   return (
@@ -14,14 +14,14 @@ const EssentialCard = ({ item }) => {
               </div>
             </h5>
             <p className="card-text">{item.description} </p>
-            <a href="#" className="btn btn-primary">
+            <Link to="/dashboard" className="btn btn-primary">
               {" "}
               Select
-            </a>{" "}
-            <a href="#" className="btn btn-info">
+            </Link>{" "}
+            <Link to="/dashboard" className="btn btn-info">
               {" "}
               Learn more
-            </a>
+            </Link>
           </div>
         </div>
       </div>

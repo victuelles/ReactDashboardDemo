@@ -3,10 +3,6 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import InstanceLink from "./InstanceLink";
 import { getCurrentProfile } from "../../actions/profileActions";
-import {
-  getProjectInstance,
-  clearProjectInstance
-} from "../../actions/projectActions";
 
 class Instance extends Component {
   componentDidMount() {
@@ -14,9 +10,9 @@ class Instance extends Component {
   }
 
   render() {
-    const { user, isAuthenticated } = this.props.auth;
-    const { profile, loading } = this.props.profile;
-    const { projects, instance } = this.props.project;
+    const { isAuthenticated } = this.props.auth;
+
+    const { projects } = this.props.project;
     let theInstance = null;
     if (projects) {
       for (let index in projects) {
@@ -36,11 +32,6 @@ class Instance extends Component {
     }
     return (
       <div>
-        {/*   <h1>
-          Project Id : {this.props.match.params.projId} <br />
-          Instance Id :{this.props.match.params.id}
-     </h1>*/}
-
         {isAuthenticated && theInstance && (
           <InstanceLink key={theInstance._id} instance={theInstance} />
         )}

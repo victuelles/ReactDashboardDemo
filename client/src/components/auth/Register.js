@@ -57,10 +57,9 @@ class Register extends Component {
     // Select options for status
     const options = [
       { label: "* Select Interplay Package", value: null },
-      { label: "Starter", value: 1 },
+      { label: "Starter ", value: 1 },
       { label: "Professional", value: 2 },
-      { label: "Enterprise", value: 3 },
-      { label: "Custom", value: 4 }
+      { label: "Enterprise", value: 3 }
     ];
     return (
       <div className="register">
