@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 
 class DashboardInit extends Component {
+  state = {};
   render() {
     const { packageSelected, packageValue } = this.props;
     console.log(packageSelected, packageValue);
@@ -39,6 +40,7 @@ class DashboardInit extends Component {
         imgSource = "/img/size_big.png";
         servers = [100, 100, 200];
         instanceSize = "LARGE";
+
         displayPackage = (
           <ul>
             <li> $500K/year license</li>
@@ -53,6 +55,8 @@ class DashboardInit extends Component {
 
       default:
         imgSource = "/img/size_micro.png";
+        servers = [1, 1, 2];
+        instanceSize = "MICRO";
         displayPackage = (
           <ul>
             <li> $30K/year license</li>
