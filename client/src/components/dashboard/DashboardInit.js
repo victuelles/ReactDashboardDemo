@@ -178,14 +178,8 @@ class DashboardInit extends Component {
                   </div>
                 </h5>
                 <p className="card-text">FAQ support via NLP </p>
-                <a href="#" className="btn btn-primary">
-                  {" "}
-                  Create
-                </a>{" "}
-                <a href="#" className="btn btn-info">
-                  {" "}
-                  Learn more
-                </a>
+                <button className="btn btn-primary"> Create</button>{" "}
+                <button className="btn btn-info"> Learn more</button>
               </div>
             </div>
           </div>
@@ -203,14 +197,8 @@ class DashboardInit extends Component {
                   </div>
                 </h5>
                 <p className="card-text">AI-powered customer support app </p>
-                <a href="#" className="btn btn-primary">
-                  {" "}
-                  Create
-                </a>{" "}
-                <a href="#" className="btn btn-info">
-                  {" "}
-                  Learn more
-                </a>
+                <button className="btn btn-primary"> Create</button>{" "}
+                <button className="btn btn-info"> Learn more</button>
               </div>
             </div>
           </div>
@@ -231,14 +219,8 @@ class DashboardInit extends Component {
                   {" "}
                   Purchasing through Alexa or Google Home devices{" "}
                 </p>
-                <a href="#" className="btn btn-primary">
-                  {" "}
-                  Create
-                </a>{" "}
-                <a href="#" className="btn btn-info">
-                  {" "}
-                  Learn more
-                </a>
+                <button className="btn btn-primary"> Create</button>{" "}
+                <button className="btn btn-info"> Learn more</button>
               </div>
             </div>
           </div>
@@ -259,14 +241,8 @@ class DashboardInit extends Component {
                   {" "}
                   Personalized recommendations of recipes for the home user{" "}
                 </p>
-                <a href="#" className="btn btn-primary">
-                  {" "}
-                  Create
-                </a>{" "}
-                <a href="#" className="btn btn-info">
-                  {" "}
-                  Learn more
-                </a>
+                <button className="btn btn-primary"> Create</button>{" "}
+                <button className="btn btn-info"> Learn more</button>
               </div>
             </div>
           </div>
@@ -284,14 +260,8 @@ class DashboardInit extends Component {
                   </div>
                 </h5>
                 <p className="card-text">Tracking shipping orders </p>
-                <a href="#" className="btn btn-primary">
-                  {" "}
-                  Create
-                </a>{" "}
-                <a href="#" className="btn btn-info">
-                  {" "}
-                  Learn more
-                </a>
+                <button className="btn btn-primary"> Create</button>{" "}
+                <button className="btn btn-info"> Learn more</button>
               </div>
             </div>
           </div>
@@ -312,14 +282,8 @@ class DashboardInit extends Component {
                 <p className="card-text">
                   Compare Product Attributes across popular retailers{" "}
                 </p>
-                <a href="#" className="btn btn-primary">
-                  {" "}
-                  Create
-                </a>{" "}
-                <a href="#" className="btn btn-info">
-                  {" "}
-                  Learn more
-                </a>
+                <button className="btn btn-primary"> Create</button>{" "}
+                <button className="btn btn-info"> Learn more</button>
               </div>
             </div>
           </div>
@@ -340,14 +304,8 @@ class DashboardInit extends Component {
                 <p className="card-text">
                   Loyalty program through blockchain reward tokens{" "}
                 </p>
-                <a href="#" className="btn btn-primary">
-                  {" "}
-                  Create
-                </a>{" "}
-                <a href="#" className="btn btn-info">
-                  {" "}
-                  Learn more
-                </a>
+                <button className="btn btn-primary"> Create</button>{" "}
+                <button className="btn btn-info"> Learn more</button>
               </div>
             </div>
           </div>
@@ -365,14 +323,8 @@ class DashboardInit extends Component {
                   </div>
                 </h5>
                 <p className="card-text">Build your own </p>
-                <a href="#" className="btn btn-primary">
-                  {" "}
-                  Create
-                </a>{" "}
-                <a href="#" className="btn btn-info">
-                  {" "}
-                  Learn more
-                </a>
+                <button className="btn btn-primary"> Create</button>{" "}
+                <button className="btn btn-info"> Learn more</button>
               </div>
             </div>
           </div>

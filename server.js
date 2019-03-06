@@ -6,7 +6,6 @@ const path = require("path");
 
 const users = require("./routes/api/users");
 const profile = require("./routes/api/profile");
-const posts = require("./routes/api/posts");
 const essentials = require("./routes/api/essentials");
 const packages = require("./routes/api/packages");
 const project = require("./routes/api/projects");
@@ -34,7 +33,6 @@ require("./config/passport")(passport);
 // Use Routes
 app.use("/api/users", users);
 app.use("/api/profile", profile);
-app.use("/api/posts", posts);
 app.use("/api/essentials", essentials);
 app.use("/api/packages", packages);
 app.use("/api/project", project);

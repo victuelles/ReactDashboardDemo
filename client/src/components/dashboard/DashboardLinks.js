@@ -4,7 +4,7 @@ import React, { Fragment } from "react";
 const DashboardLinks = ({ project }) => {
   // console.log(project);
   let subLink;
-  let subLinks;
+
   if (project.instance) {
     subLink = project.instance.map(instance => (
       <div className="  col-sm-4  no-gutters" key={`${instance._id}`}>
@@ -60,10 +60,6 @@ const DashboardLinks = ({ project }) => {
         </div>
       </div>
     ));
-
-    subLinks = `<div /> +
-      ${subLink} +
-      </div>`;
   }
 
   return (

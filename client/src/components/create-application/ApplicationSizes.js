@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 
 const ApplicationSizes = props => (
   <div>
@@ -24,10 +24,10 @@ const ApplicationSizes = props => (
               Free Tier
               <br />1 GB/ 1 CPU
             </p>
-            <Link to="/dashboard" className="btn btn-primary">
+            <button to="/dashboard" className="btn btn-primary">
               {" "}
               Select
-            </Link>
+            </button>
           </div>
         </div>
       </div>
@@ -49,10 +49,10 @@ const ApplicationSizes = props => (
               Paid Tier
               <br />2 GB/ 1 CPU
             </p>
-            <Link to="#" className="btn btn-primary">
+            <button to="#" className="btn btn-primary">
               {" "}
               Select
-            </Link>
+            </button>
           </div>
         </div>
       </div>
@@ -74,10 +74,7 @@ const ApplicationSizes = props => (
               Paid Tier
               <br />4 GB/ 2 CPUs
             </p>
-            <Link to="/" className="btn btn-primary">
-              {" "}
-              Select
-            </Link>
+            <button className="btn btn-primary"> Select</button>
           </div>
         </div>
       </div>
@@ -87,7 +84,7 @@ const ApplicationSizes = props => (
           <img
             className="card-img-top"
             src="/img/size_big.png"
-            alt="Card image cap"
+            alt="Card   cap"
           />
           <div className="card-body ">
             <h5 className="card-title">
@@ -99,10 +96,7 @@ const ApplicationSizes = props => (
               Paid Tier
               <br />8 GB/ 4 CPUs
             </p>
-            <a href="#" className="btn btn-primary">
-              {" "}
-              Select
-            </a>
+            <button className="btn btn-primary"> Select</button>
           </div>
         </div>
       </div>
