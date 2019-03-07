@@ -7,7 +7,7 @@ const DashboardLinks = ({ project }) => {
 
   if (project.instance) {
     subLink = project.instance.map(instance => (
-      <div className="  col-sm-4  no-gutters" key={`${instance._id}`}>
+      <div className=" mt-2 mb-2 col-sm-4  no-gutters" key={`${instance._id}`}>
         <div className="item card z-depth application-card">
           <div className="card-body">
             <a
@@ -64,7 +64,9 @@ const DashboardLinks = ({ project }) => {
 
   return (
     <Fragment>
+      <br />
       <h3>{project.projectname} </h3>
+      <hr />
       <div className="row"> {subLink}</div>
     </Fragment>
   );

@@ -37,6 +37,29 @@ class Dashboard extends Component {
           Dashboard
         </h4>
         {hasInstance ? (
+          <div className="row">
+            <div className="col-sm-12">
+              <img
+                src="/img/node_summary.png"
+                width="90%"
+                height="400px"
+                alt="summary instances"
+              />
+            </div>
+
+            <div className="col-sm-12">
+              <img
+                src="/img/node_details.png"
+                width="100%"
+                height="700px"
+                alt="summary instances"
+              />
+            </div>
+          </div>
+        ) : (
+          ""
+        )}
+        {hasInstance ? (
           projects.map(proj => <DashboardLinks key={proj._id} project={proj} />)
         ) : profile === null || loading ? (
           <Spinner />
