@@ -7,6 +7,13 @@ import { clearCurrentProfile } from "../../actions/profileActions";
 import $ from "jquery";
 class Navbar extends Component {
   state = { toggle: false };
+
+  componentDidUpdate(prevProps) {
+    if (this.props.location !== prevProps.location) {
+      window.scrollTo(0, 0);
+    }
+  }
+
   onLogoutClick(e) {
     e.preventDefault();
     this.props.clearCurrentProfile();

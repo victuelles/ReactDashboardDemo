@@ -1,372 +1,82 @@
-import React from "react";
+import React, { Component, Fragment } from "react";
 
-const DataCenters = props => (
-  <div>
-    <h4 className="d-sm-flex align-items-center justify-content-between mb-4 page-heading">
-      Choose Data Center
-    </h4>
-    <div className="row">
-      <div className="container-fluid mt-3">
-        <ul className="nav nav-tabs">
-          <li className="nav-item">
-            <a className="nav-link active " data-toggle="tab" href="#home">
-              AWS EC3
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link " data-toggle="tab" href="#menu1">
-              Google Cloud Platform
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link " data-toggle="tab" href="#menu2">
-              Packet Cloud
-            </a>
-          </li>
-        </ul>
+import DATA_CENTERS from "../../data/DataCenters";
 
-        <div className="tab-content">
-          <div id="home" className="container-fluid  tab-pane active">
-            <br />
-            <h6>Asia Pacific </h6>
+class DataCenters extends Component {
+  state = { dataCenter: DATA_CENTERS };
+  cityClicked = e => {
+    console.log(e.currentTarget.id);
+  };
+  render() {
+    const { dataCenter } = this.state;
+    console.log("dataCenter", dataCenter);
+    let initTabActive = 0;
+    let tabs = dataCenter.map((datacenter, index) => (
+      <li className="nav-item" key={datacenter.id}>
+        <a
+          className={`nav-link  ${index === 0 ? "active" : ""}`}
+          data-toggle="tab"
+          href={`#${datacenter.pid}`}
+        >
+          {datacenter.provider}
+        </a>
+      </li>
+    ));
+    console.log(DATA_CENTERS);
+    let tabsFolders = DATA_CENTERS.map((datacenter, index2) => (
+      <div
+        id={datacenter.pid}
+        key={datacenter.id}
+        className={`container-fluid  tab-pane fade  ${
+          datacenter.id === 1 ? "active show" : ""
+        }`}
+      >
+        <br />
+
+        {datacenter.locations.map(loc => (
+          <Fragment key={loc.name}>
             <div className="row">
-              <div className="card align-items-center data-center">
-                <div className="card-body ">
-                  <img
-                    src="/img/blank.gif"
-                    className="flag flag-kr "
-                    alt="South Korean"
-                  />
-                  <p className="card-text text-center">Seoul</p>
-                </div>
-              </div>
-
-              <div className="card align-items-center data-center">
-                <div className="card-body ">
-                  <img
-                    src="/img/blank.gif"
-                    className="flag flag-sg "
-                    alt="Singapore"
-                  />
-                  <p className="card-text text-center">Singapore</p>
-                </div>
-              </div>
-
-              <div className="card align-items-center data-center">
-                <div className="card-body ">
-                  <img
-                    src="/img/blank.gif"
-                    className="flag flag-au "
-                    alt="Australia"
-                  />
-                  <p className="card-text text-center">Sydney</p>
-                </div>
-              </div>
-
-              <div className="card align-items-center data-center">
-                <div className="card-body ">
-                  <img
-                    src="/img/blank.gif"
-                    className="flag flag-jp "
-                    alt="Japan"
-                  />
-                  <p className="card-text text-center">Tokyo</p>
-                </div>
-              </div>
+              <h6>{loc.name} </h6>
             </div>
-            <br />
-            <div className="page-heading" />
-            <br />
-            <h6>Europe </h6>
             <div className="row">
-              <div className="card align-items-center data-center">
-                <div className="card-body    text-center ">
-                  <img
-                    src="/img/blank.gif"
-                    className="flag flag-de "
-                    alt="South Korean"
-                  />
-                  <p className="card-text text-center">Frankfurt</p>
-                </div>
-              </div>
-
-              <div className="card align-items-center data-center">
-                <div className="card-body ">
-                  <img
-                    src="/img/blank.gif"
-                    className="flag flag-ie "
-                    alt="Singapore"
-                  />
-                  <p className="card-text text-center">Ireland</p>
-                </div>
-              </div>
-
-              <div className="card align-items-center data-center">
-                <div className="card-body ">
-                  <img
-                    src="/img/blank.gif"
-                    className="flag flag-gb "
-                    alt="Australia"
-                  />
-                  <p className="card-text text-center">London</p>
-                </div>
-              </div>
-
-              <div className="card align-items-center data-center">
-                <div className="card-body ">
-                  <img
-                    src="/img/blank.gif"
-                    className="flag flag-fr "
-                    alt="Japan"
-                  />
-                  <p className="card-text text-center">Paris</p>
-                </div>
-              </div>
+              {loc.country.map(city => (
+                <button
+                  className="card align-items-center data-center"
+                  key={city.name}
+                  city={city.name}
+                  id={`${datacenter.pid}_${city.name}`}
+                  onClick={this.cityClicked}
+                >
+                  <div className="card-body ">
+                    <img
+                      src="/img/blank.gif"
+                      className={`flag ${city.image}`}
+                      alt={city.name}
+                    />
+                    <p className="card-text text-center">{city.name}</p>
+                  </div>
+                </button>
+              ))}
             </div>
+          </Fragment>
+        ))}
+      </div>
+    ));
 
-            <br />
-            <div className="page-heading" />
-            <br />
-            <h6>Americas </h6>
-            <div className="row">
-              <div className="card align-items-center data-center">
-                <div className="card-body text-center ">
-                  <img
-                    src="/img/blank.gif"
-                    className="flag flag-us "
-                    alt="South Korean"
-                  />
-                  <p className="card-text text-center">N. Virginia</p>
-                </div>
-              </div>
+    return (
+      <div>
+        <h4 className="d-sm-flex align-items-center justify-content-between mb-4 page-heading">
+          Choose Data Center
+        </h4>
+        <div className="row">
+          <div className="container-fluid mt-3">
+            <ul className="nav nav-tabs">{tabs}</ul>
 
-              <div className="card align-items-center data-center">
-                <div className="card-body text-center  ">
-                  <img
-                    src="/img/blank.gif"
-                    className="flag flag-us "
-                    alt="Singapore"
-                  />
-                  <p className="card-text text-center">Ohio</p>
-                </div>
-              </div>
-
-              <div className="card align-items-center data-center">
-                <div className="card-body text-center ">
-                  <img
-                    src="/img/blank.gif"
-                    className="flag flag-us "
-                    alt="Australia"
-                  />
-                  <p className="card-text text-center">N. California</p>
-                </div>
-              </div>
-
-              <div className="card align-items-center data-center">
-                <div className="card-body  text-center">
-                  <img
-                    src="/img/blank.gif"
-                    className="flag flag-us "
-                    alt="Japan"
-                  />
-                  <p className="card-text text-center">Oregon</p>
-                </div>
-              </div>
-              <div className="card align-items-center data-center">
-                <div className="card-body ">
-                  <img
-                    src="/img/blank.gif"
-                    className="flag flag-ca "
-                    alt="Japan"
-                  />
-                  <p className="card-text text-center">Canada</p>
-                </div>
-              </div>
-              <div className="card align-items-center data-center">
-                <div className="card-body text-center ">
-                  <img
-                    src="/img/blank.gif"
-                    className="flag flag-br "
-                    alt="Japan"
-                  />
-                  <p className="card-text text-center">Sao Paulo</p>
-                </div>
-              </div>
-            </div>
-            <br />
-            <div className="page-heading" />
-            <br />
-          </div>
-
-          <div id="menu1" className="container-fluid  tab-pane fade">
-            <br />
-
-            <div className="row">
-              <div className="card align-items-center data-center">
-                <div className="card-body text-center ">
-                  <img
-                    src="/img/blank.gif"
-                    className="flag flag-fi "
-                    alt="South Korean"
-                  />
-                  <p className="card-text text-center">
-                    GCP - FINLAND <br />
-                    (europe-north1)
-                  </p>
-                </div>
-              </div>
-
-              <div className="card align-items-center data-center">
-                <div className="card-body  text-center">
-                  <img
-                    src="/img/blank.gif"
-                    className="flag flag-gb "
-                    alt="Singapore"
-                  />
-                  <p className="card-text text-center">
-                    {" "}
-                    GCP -LONDON <br />
-                    (europe-west2)
-                  </p>
-                </div>
-              </div>
-
-              <div className="card align-items-center data-center">
-                <div className="card-body text-center ">
-                  <img
-                    src="/img/blank.gif"
-                    className="flag flag-us "
-                    alt="Australia"
-                  />
-                  <p className="card-text text-center">
-                    GCP - Oregon <br />
-                    (us-west1)
-                  </p>
-                </div>
-              </div>
-
-              <div className="card align-items-center data-center">
-                <div className="card-body text-center  ">
-                  <img
-                    src="/img/blank.gif"
-                    className="flag flag-sg "
-                    alt="Japan"
-                  />
-                  <p className="card-text text-center">
-                    GCP - SINGAPORE <br />
-                    (asia-southeast1)
-                  </p>
-                </div>
-              </div>
-
-              <div className="card align-items-center data-center">
-                <div className="card-body  text-center">
-                  <img
-                    src="/img/blank.gif"
-                    className="flag flag-au "
-                    alt="Singapore"
-                  />
-                  <p className="card-text text-center">
-                    GCP - SYDNEY <br />
-                    (australia-southeast1)
-                  </p>
-                </div>
-              </div>
-
-              <div className="card align-items-center data-center">
-                <div className="card-body text-center ">
-                  <img
-                    src="/img/blank.gif"
-                    className="flag flag-us "
-                    alt="Australia"
-                  />
-                  <p className="card-text text-center">
-                    GCP - South Carolina <br />
-                    (us-east1)
-                  </p>
-                </div>
-              </div>
-
-              <div className="card align-items-center data-center">
-                <div className="card-body text-center  ">
-                  <img
-                    src="/img/blank.gif"
-                    className="flag flag-sg "
-                    alt="Japan"
-                  />
-                  <p className="card-text text-center">
-                    GCP - SÃO PAULO <br /> (southamerica-east1)
-                  </p>
-                </div>
-              </div>
-            </div>
-            <br />
-            <div className="page-heading" />
-            <br />
-          </div>
-
-          <div id="menu2" className="container-fluid  tab-pane fade">
-            <br />
-            <div className="row">
-              <div className="card align-items-center data-center">
-                <div className="card-body text-center">
-                  <img
-                    src="/img/blank.gif"
-                    className="flag flag-de "
-                    alt="South Korean"
-                  />
-                  <p className="card-text text-center">
-                    Packet Cloud - Frankfurt
-                  </p>
-                </div>
-              </div>
-
-              <div className="card align-items-center data-center">
-                <div className="card-body text-center">
-                  <img
-                    src="/img/blank.gif"
-                    className="flag flag-us "
-                    alt="Singapore"
-                  />
-                  <p className="card-text text-center">
-                    Packet Cloud - Los Angeles
-                  </p>
-                </div>
-              </div>
-
-              <div className="card align-items-center data-center">
-                <div className="card-body text-center ">
-                  <img
-                    src="/img/blank.gif"
-                    className="flag flag-us "
-                    alt="Australia"
-                  />
-                  <p className="card-text text-center">
-                    Packet Cloud - Seattle
-                  </p>
-                </div>
-              </div>
-
-              <div className="card align-items-center data-center">
-                <div className="card-body text-center">
-                  <img
-                    src="/img/blank.gif"
-                    className="flag flag-ca "
-                    alt="Japan"
-                  />
-                  <p className="card-text text-center">
-                    Packet Cloud - Toronto
-                  </p>
-                </div>
-              </div>
-            </div>
-            <br />
-            <div className="page-heading" />
-            <br />
+            <div className="tab-content">{tabsFolders}</div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-);
+    );
+  }
+}
 export default DataCenters;

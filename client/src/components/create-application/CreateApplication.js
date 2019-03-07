@@ -26,24 +26,41 @@ class CreateApplication extends Component {
   }
 
   render() {
+    // console.log("id=", this.props.match.params.id);
+    //  console.log("essential=", this.state);
+    //console.log("essential=", this.props.essential);
     const { essential } = this.props;
+    let steps;
+    let selectedApp = "";
+    if (this.props.match.params.id === "new") {
+      steps = [
+        { name: "Essentials", component: <Essentials data={essential} /> },
+        { name: "Data Centers", component: <DataCenters /> },
+        { name: "Sizes", component: <ApplicationSizes /> },
+        { name: "Credentials", component: <ApplicationCreds /> }
+      ];
+    } else {
+      steps = [
+        { name: "Data Centers", component: <DataCenters /> },
+        { name: "Sizes", component: <ApplicationSizes /> },
+        { name: "Credentials", component: <ApplicationCreds /> }
+      ];
 
-    if (Object.keys(essential).length > 0) {
-      // console.log(essential);
+      essential.essentials.map(essential => {
+        if (essential._id === this.props.match.params.id) {
+          selectedApp = essential.name;
+        }
+      });
     }
-    const steps = [
-      { name: "Essentials", component: <Essentials data={essential} /> },
-      { name: "Data Centers", component: <DataCenters /> },
-      { name: "Sizes", component: <ApplicationSizes /> },
-      { name: "Credentials", component: <ApplicationCreds /> }
-    ];
 
     return (
       <div className="page" style={sectionStyleHeaderMasthead}>
         <div className="home-page">
           <header className=" text-center text-black">
             <div className="container" style={{ paddingTop: "20px" }}>
-              <h2 className="masthead-heading mb-0">Create Application</h2>
+              <h2 className="masthead-heading mb-0">
+                Create <strong>{selectedApp}</strong> application
+              </h2>
               <div>
                 <StepZilla steps={steps} />
               </div>

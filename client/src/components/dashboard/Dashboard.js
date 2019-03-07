@@ -14,10 +14,6 @@ class Dashboard extends Component {
     this.props.getCurrentProfile();
   }
 
-  onDeleteClick(e) {
-    this.props.deleteAccount();
-  }
-
   render() {
     const { user, isAuthenticated } = this.props.auth;
     const { profile, loading } = this.props.profile;
@@ -34,6 +30,7 @@ class Dashboard extends Component {
     let packageSelected = packages[user.package - 1];
     console.log(packageSelected);
     //console.log("hasInstance", hasInstance);
+
     return (
       <div className="dashboard ">
         <h4 className="d-sm-flex align-items-center justify-content-between mb-4 page-heading">

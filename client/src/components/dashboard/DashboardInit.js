@@ -1,10 +1,18 @@
 import React, { Component, Fragment } from "react";
+import Essentials from "./Essentials";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { getEssentials } from "../../actions/essentialActions";
 
 class DashboardInit extends Component {
-  state = {};
+  componentDidMount() {
+    this.props.getEssentials();
+  }
   render() {
-    const { packageSelected, packageValue } = this.props;
+    const { packageSelected, packageValue, essential } = this.props;
     console.log(packageSelected, packageValue);
+    console.log("this.props", this.props);
+    console.log("essential", essential);
     let displayPackage, imgSource, servers, instanceSize;
     switch (packageValue) {
       case "1":
@@ -162,176 +170,23 @@ class DashboardInit extends Component {
         <hr />
         <br />
         <h3>Essentials</h3>
-        <div className="row">
-          <div className="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-xs-4 mb-4 no-gutters">
-            <div className="card border-left-info shadow h-100  ">
-              <img
-                className="card-img-top"
-                src="/img/ip-faq.png"
-                alt="Card cap"
-              />
-              <div className="card-body ">
-                <h5 className="card-title">
-                  <div className="h5 font-weight-bold text-primary text-uppercase mb-1">
-                    {" "}
-                    AI Powered FAQ
-                  </div>
-                </h5>
-                <p className="card-text">FAQ support via NLP </p>
-                <button className="btn btn-primary"> Create</button>{" "}
-                <button className="btn btn-info"> Learn more</button>
-              </div>
-            </div>
-          </div>
-          <div className="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-xs-4 mb-4 no-gutters">
-            <div className="card border-left-info shadow h-100  ">
-              <img
-                className="card-img-top"
-                src="/img/ip-support-magic.png"
-                alt="Card cap"
-              />
-              <div className="card-body ">
-                <h5 className="card-title">
-                  <div className="h5 font-weight-bold text-primary text-uppercase mb-1">
-                    Support Magic
-                  </div>
-                </h5>
-                <p className="card-text">AI-powered customer support app </p>
-                <button className="btn btn-primary"> Create</button>{" "}
-                <button className="btn btn-info"> Learn more</button>
-              </div>
-            </div>
-          </div>
-          <div className="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-xs-4 mb-4 no-gutters">
-            <div className="card border-left-info shadow h-100  ">
-              <img
-                className="card-img-top"
-                src="/img/ip-voice-order.png"
-                alt="Card cap"
-              />
-              <div className="card-body ">
-                <h5 className="card-title">
-                  <div className="h5 font-weight-bold text-primary text-uppercase mb-1">
-                    Voice Purchase
-                  </div>
-                </h5>
-                <p className="card-text">
-                  {" "}
-                  Purchasing through Alexa or Google Home devices{" "}
-                </p>
-                <button className="btn btn-primary"> Create</button>{" "}
-                <button className="btn btn-info"> Learn more</button>
-              </div>
-            </div>
-          </div>
-          <div className="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-xs-4 mb-4 no-gutters">
-            <div className="card border-left-info shadow h-100  ">
-              <img
-                className="card-img-top"
-                src="/img/ip-recipe-ai.png"
-                alt="Card cap"
-              />
-              <div className="card-body ">
-                <h5 className="card-title">
-                  <div className="h5 font-weight-bold text-primary text-uppercase mb-1">
-                    Recipe App
-                  </div>
-                </h5>
-                <p className="card-text">
-                  {" "}
-                  Personalized recommendations of recipes for the home user{" "}
-                </p>
-                <button className="btn btn-primary"> Create</button>{" "}
-                <button className="btn btn-info"> Learn more</button>
-              </div>
-            </div>
-          </div>
-          <div className="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-xs-4 mb-4 no-gutters">
-            <div className="card border-left-info shadow h-100  ">
-              <img
-                className="card-img-top"
-                src="/img/ip-shipping-order.png"
-                alt="Card cap"
-              />
-              <div className="card-body ">
-                <h5 className="card-title">
-                  <div className="h5 font-weight-bold text-primary text-uppercase mb-1">
-                    Order App
-                  </div>
-                </h5>
-                <p className="card-text">Tracking shipping orders </p>
-                <button className="btn btn-primary"> Create</button>{" "}
-                <button className="btn btn-info"> Learn more</button>
-              </div>
-            </div>
-          </div>
-          <div className="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-xs-4 mb-4 no-gutters">
-            <div className="card border-left-info shadow h-100  ">
-              <img
-                className="card-img-top"
-                src="/img/ip-attribute-magic.png"
-                alt="Card cap"
-              />
-              <div className="card-body ">
-                <h5 className="card-title">
-                  <div className="h5 font-weight-bold text-primary text-uppercase mb-1">
-                    {" "}
-                    Attribute Magic
-                  </div>
-                </h5>
-                <p className="card-text">
-                  Compare Product Attributes across popular retailers{" "}
-                </p>
-                <button className="btn btn-primary"> Create</button>{" "}
-                <button className="btn btn-info"> Learn more</button>
-              </div>
-            </div>
-          </div>
-          <div className="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-xs-4 mb-4 no-gutters">
-            <div className="card border-left-info shadow h-100  ">
-              <img
-                className="card-img-top"
-                src="/img/ip-blockchain.png"
-                alt="Card cap"
-              />
-              <div className="card-body ">
-                <h5 className="card-title">
-                  <div className="h5 font-weight-bold text-primary text-uppercase mb-1">
-                    {" "}
-                    Block Chain Loyalty
-                  </div>
-                </h5>
-                <p className="card-text">
-                  Loyalty program through blockchain reward tokens{" "}
-                </p>
-                <button className="btn btn-primary"> Create</button>{" "}
-                <button className="btn btn-info"> Learn more</button>
-              </div>
-            </div>
-          </div>
-          <div className="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-xs-4 mb-4 no-gutters">
-            <div className="card border-left-info shadow h-100  ">
-              <img
-                className="card-img-top"
-                src="/img/ip-custom.png"
-                alt="Card cap"
-              />
-              <div className="card-body ">
-                <h5 className="card-title">
-                  <div className="h5 font-weight-bold text-primary text-uppercase mb-1">
-                    Custom
-                  </div>
-                </h5>
-                <p className="card-text">Build your own </p>
-                <button className="btn btn-primary"> Create</button>{" "}
-                <button className="btn btn-info"> Learn more</button>
-              </div>
-            </div>
-          </div>
+        <div>
+          <Essentials essentials={essential.essentials} />
         </div>
       </Fragment>
     );
   }
 }
 
-export default DashboardInit;
+DashboardInit.propTypes = {
+  essential: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+  essential: state.essential
+});
+
+export default connect(
+  mapStateToProps,
+  { getEssentials }
+)(DashboardInit);
